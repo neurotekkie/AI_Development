@@ -1,0 +1,22 @@
+name: Sync to Dropbox on Push
+
+on:
+  push:
+    branches:
+      - main  # Change to 'master' or your default branch if different
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Compress and Upload to Dropbox
+        uses: jakejarvis/dropbox-github-action@v1.1.0 # Or use intersecato/dropbox-upload
+        with:
+          args: upload ./ /MyProjectBackup
+        env:
+          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
