@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Compress and Upload to Dropbox
-        uses: jakejarvis/dropbox-github-action@v1.1.0 # Or use intersecato/dropbox-upload
+        uses: Lewuathe/dropbox-github-action@v1.0.3
         with:
           args: upload ./ "/Karen Tao/AI_and_Development_MIT_FutureTech/Karen/00 Code"
         env:
