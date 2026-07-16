@@ -15,7 +15,7 @@ jobs:
       - name: Compress and Upload to Dropbox
         uses: jakejarvis/dropbox-github-action@v1.1.0 # Or use intersecato/dropbox-upload
         with:
-          args: upload ./ /MyProjectBackup
+          args: upload ./ "/Karen Tao/AI_and_Development_MIT_FutureTech/Karen/00 Code"
         env:
           DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
           DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
